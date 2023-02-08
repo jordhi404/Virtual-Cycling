@@ -13,10 +13,16 @@ class _SignUpState extends State<SignUp>{
   Widget build(BuildContext context){
     return Container(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           elevation: 0,
+          leading: BackButton(
+            color: Colors.black,
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()));
+            },
+          ),
         ),
         body: Stack(
           children: [
@@ -38,7 +44,7 @@ class _SignUpState extends State<SignUp>{
                         children: [
                           // Name text field.
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -59,7 +65,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Email text field.
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -80,7 +86,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Password text field.
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -101,7 +107,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Confirm password text field.
                           TextField(
-                            style: TextStyle(color: Colors.black),
+                            style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -109,7 +115,7 @@ class _SignUpState extends State<SignUp>{
                                   color: Colors.black,
                                 ),
                               ),
-                              hintText: "onfirm password",
+                              hintText: "Confirm password",
                               hintStyle: TextStyle(color: Colors.black),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
