@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:virtual_cycling_app/homepage.dart';
+import 'package:virtual_cycling_app/login_page.dart';
 
 class Profile extends StatelessWidget{
   @override
@@ -11,6 +13,11 @@ class Profile extends StatelessWidget{
           title: Center(
             child: const Text('Profile Page'),
           ),
+          leading: BackButton(
+            color: Colors.white,
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Homepage()));
+            },),
         ),
         body: ListView(
           children: <Widget>[
