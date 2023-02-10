@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:virtual_cycling_app/achievement.dart';
+import 'package:virtual_cycling_app/friend_list.dart';
 import 'package:virtual_cycling_app/login_page.dart';
+import 'package:virtual_cycling_app/my_avatar.dart';
+import 'package:virtual_cycling_app/profile.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -12,6 +16,18 @@ class Homepage extends StatelessWidget {
           text: 'A new cycling experience for you', style: TextStyle(color: Colors.black, fontSize: 20)
         ),
       ),
+    );
+    final AchievementButton = TextButton(
+      onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Achievement()))),
+      child: Text('My Achievement', style: TextStyle(color: Colors.red, fontSize: 16),),
+    );
+    final FriendListButton = TextButton(
+      onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => friends()))),
+      child: Text('My Friends', style: TextStyle(color: Colors.red, fontSize: 16),),
+    );
+    final ProfileButton = TextButton(
+      onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Profile()))),
+      child: Text('My profile', style: TextStyle(color: Colors.red, fontSize: 16),),
     );
     final buttonLogout = TextButton(
       onPressed: () => showDialog<String>(
@@ -36,7 +52,7 @@ class Homepage extends StatelessWidget {
             shrinkWrap: true,
             padding: EdgeInsets.symmetric(horizontal: 20),
             children: <Widget>[
-              description, buttonLogout
+              description, AchievementButton, FriendListButton, ProfileButton, buttonLogout
             ],
           ),
         ),
