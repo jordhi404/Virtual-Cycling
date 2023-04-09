@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtual_cycling_app/login_page.dart';
+import 'package:virtual_cycling_app/pages/login_page.dart';
 
 class SignUp extends StatefulWidget{
 const SignUp({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _SignUpState extends State<SignUp>{
                         children: [
                           // Name text field.
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -65,7 +65,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Email text field.
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -86,7 +86,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Password text field.
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -107,7 +107,7 @@ class _SignUpState extends State<SignUp>{
 
                           // Confirm password text field.
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
