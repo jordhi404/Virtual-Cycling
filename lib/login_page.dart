@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:virtual_cycling_app/homepage.dart';
-import 'package:virtual_cycling_app/sign_up_page.dart';
+import 'package:virtual_cycling_app/pages/homepage.dart';
+import 'package:virtual_cycling_app/pages/sign_up_page.dart';
+import 'package:virtual_cycling_app/utils/animations.dart';
 
 class Login extends StatefulWidget{
   @override 
@@ -40,8 +41,10 @@ class _LoginPageState extends State<Login>{
       child: TextField(
         controller: nameController,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           hintText: 'username',
-          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(50.0))
         ),
       ),
@@ -53,8 +56,10 @@ class _LoginPageState extends State<Login>{
         controller: passwordController,
         obscureText: true,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           hintText: 'Password',
-          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+          contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50.0)
           )
@@ -66,18 +71,29 @@ class _LoginPageState extends State<Login>{
       child: ButtonTheme(
         height: 56,
         child: ElevatedButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0)
+            ))
+          ),
           child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 20)),
           onPressed: () => {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Homepage())))
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Animations())))
           },
         ),
       ),
     );
-    final buttonForgotPassword = TextButton(
-      child: Text('Sign up', style: TextStyle(color: Colors.grey, fontSize: 16),),
-      onPressed: (){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => SignUp())));
-      },
+    final buttonForgotPassword = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        const Text('Does not have account?'),
+        TextButton(
+          child: Text('Sign up', style: TextStyle(color: Colors.white, fontSize: 16),),
+          onPressed: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => SignUp())));
+          },
+        ),
+      ],
     );
     return SafeArea(
       child: Scaffold(
