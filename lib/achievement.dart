@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtual_cycling_app/homepage.dart';
+import 'package:virtual_cycling_app/pages/homepage.dart';
 
 class Achievement extends StatelessWidget{
   const Achievement({Key? key}) : super(key: key);
